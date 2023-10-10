@@ -48,14 +48,14 @@
 <body>
     <div class="container">
         <h2>Admin Login</h2>
-        <form id="loginForm" action="webvm.html" method="post" onsubmit="return validateForm()">
+        <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
-            <input type="submit" value="Login">
+            <input type="button" value="Login" onclick="validateForm()">
         </form>
     </div>
 
@@ -65,10 +65,9 @@
             var password = document.getElementById("password").value;
 
             if (username === "admin" && password === "3p1cAdm!nP4ss") {
-		return true; // Allow submission and redirect
+		window.location.href = "webvm.html"
             } else {
-                alert("Invalid username or password. Please try again.");
-                return false; // Prevent submission
+                alert("Invalid username or password. Please try again.")
             }
         }
     </script>
