@@ -249,10 +249,10 @@ __      __   _  __   ____  __
 	function runBash()
 	{
 		// cmd, cwd, args and env are replaced by the Github actions workflow.
-		//var cmd = CMD;
-		//var args = ARGS;
-		//var env = ENV;
-		//var cwd = CWD;
+		var cmd = CMD;
+		var args = ARGS;
+		var env = ENV;
+		var cwd = CWD;
 		// Reasonable defaults for local deployments
 		// var cmd = "/bin/bash";
 		// var args = ["--login"];
