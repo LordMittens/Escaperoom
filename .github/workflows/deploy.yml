@@ -180,12 +180,12 @@ jobs:
       #   5. Replace ENV with the container's environment values.
       - name: Adjust index.html
         run: |
-          sudo sed -i 's#IMAGE_URL#"${{ env.IMAGE_NAME }}"#g' ${{ env.DEPLOY_DIR }}index.html
-          sudo sed -i 's#DEVICE_TYPE#"split"#g' ${{ env.DEPLOY_DIR }}index.html
-          sudo sed -i 's#CMD#${{ env.CMD }}#g' ${{ env.DEPLOY_DIR }}index.html
-          sudo sed -i 's#ARGS#${{ env.ARGS }}#g' ${{ env.DEPLOY_DIR }}index.html
-          sudo sed -i 's#ENV#${{ env.ENV }}#g' ${{ env.DEPLOY_DIR }}index.html
-          sudo sed -i 's#CWD#${{ env.CWD }}#g' ${{ env.DEPLOY_DIR }}index.html
+          sudo sed -i 's#IMAGE_URL#"${{ env.IMAGE_NAME }}"#g' ${{ env.DEPLOY_DIR }}webvm.html
+          sudo sed -i 's#DEVICE_TYPE#"split"#g' ${{ env.DEPLOY_DIR }}webvm.html
+          sudo sed -i 's#CMD#${{ env.CMD }}#g' ${{ env.DEPLOY_DIR }}webvm.html
+          sudo sed -i 's#ARGS#${{ env.ARGS }}#g' ${{ env.DEPLOY_DIR }}webvm.html
+          sudo sed -i 's#ENV#${{ env.ENV }}#g' ${{ env.DEPLOY_DIR }}webvm.html
+          sudo sed -i 's#CWD#${{ env.CWD }}#g' ${{ env.DEPLOY_DIR }}webvm.html
 
       # We generate index.list files for our httpfs to function properly.
       - name: make index.list
