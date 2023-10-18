@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y upgrade && \
 # 	xxd iptables isc-dhcp-client isc-dhcp-common kmod less netcat-openbsd
 
 # Make a user, then copy over the /example directory
-RUN useradd -m user && echo "room1:password" | chpasswd
+RUN useradd -m room1 && echo "room1:password" | chpasswd
 COPY --chown=user:room1 ./examples /home/user/examples
 RUN chmod -R +x  /home/user/examples/lua
 RUN echo 'root:password' | chpasswd
