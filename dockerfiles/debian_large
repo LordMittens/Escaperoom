@@ -18,3 +18,4 @@ RUN useradd -m room2 && echo "room2:4mAz1ngH4X0R" | chpasswd
 COPY --chown=user:room1 ./Documents /home/user/Documents
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
+RUN export PS1="\u@\h\$"
