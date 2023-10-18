@@ -178,7 +178,7 @@ jobs:
       #   3. Replace CMD with the Dockerfile entry command.
       #   4. Replace args with the Dockerfile CMD / Entrypoint args.
       #   5. Replace ENV with the container's environment values.
-      - name: Adjust index.html
+      - name: Adjust webvm.html
         run: |
           sudo sed -i 's#IMAGE_URL#"${{ env.IMAGE_NAME }}"#g' ${{ env.DEPLOY_DIR }}webvm.html
           sudo sed -i 's#DEVICE_TYPE#"split"#g' ${{ env.DEPLOY_DIR }}webvm.html
