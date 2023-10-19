@@ -15,7 +15,8 @@ RUN apt-get update && apt-get -y upgrade && \
 # Make a user, then copy over the /example directory
 RUN useradd -s /bin/bash -m room1 && echo "room1:password" | chpasswd
 RUN useradd -s /bin/bash -m room2 && echo "room2:4mAz1ngH4X0R" | chpasswd
-COPY --chown=room1:user ./Documents /home/room1/Documents
+COPY --chown=room1:user ./Room1Docs /home/room1/Documents
 WORKDIR /home/room1
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
+USER room1
