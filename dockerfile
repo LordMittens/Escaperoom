@@ -16,7 +16,9 @@ RUN apt-get update && apt-get -y upgrade && \
 RUN useradd -s /bin/bash -m room1 && echo "room1:password" | chpasswd
 RUN useradd -s /bin/bash -m room2 && echo "room2:4mAz1ngH4X0R" | chpasswd
 COPY --chown=room1:user ./Room1Docs /home/room1/Documents
-WORKDIR /home/room1
+RUN chmod 700 home/room1
+RUN chmod 700 home/room2
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
+WORKDIR /home/room1
 USER room1
