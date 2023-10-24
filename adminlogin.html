@@ -52,7 +52,7 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
-            <input type="submit" value="Login" onclick="validateForm()">
+            <input type="reset" value="Login" onclick="validateForm()">
         </form>
     </div>
 
@@ -62,7 +62,7 @@
             var password = document.getElementById("password").value;
 
             if (username === "admin" && password === "3p1cAdm!nP4ss") {
-		window.location.href = "webvm.html"
+		        window.location.href = "webvm.html"
             } else {
                 alert("Invalid username or password. Please try again.")
             }

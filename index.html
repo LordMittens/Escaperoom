@@ -52,7 +52,7 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             
-            <input type="submit" value="Login" onclick="validateForm()">
+            <input type="reset" value="Login" onclick="validateForm()">
         </form>
     </div>
 
@@ -62,9 +62,10 @@
             var password = document.getElementById("password").value;
 
             if (username === "user" && password === "user") {
-                window.location.href = "userpage.html?userID=2"
+                window.location.href = "userpage.html?userID=2";
+                return false;
             } else {
-                alert("Invalid username or password. Please try again.")
+                alert("Invalid username or password. Please try again.");
             }
         }
     </script>
