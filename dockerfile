@@ -20,5 +20,6 @@ RUN chmod 700 home/room1
 RUN chmod 700 home/room2
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
+ENV PATH="${PATH}:/home/room1"
 WORKDIR /home/room1
 USER room1
