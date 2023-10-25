@@ -21,5 +21,4 @@ RUN chmod 700 home/room2
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
 WORKDIR /home/room1
-RUN cd ..
 USER room1
