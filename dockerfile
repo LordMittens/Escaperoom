@@ -15,12 +15,11 @@ RUN apt-get update && apt-get -y upgrade && \
 # Make a user, then copy over the /example directory
 RUN useradd -s /bin/bash -m room1 && echo "room1:password" | chpasswd
 RUN useradd -s /bin/bash -m room2 && echo "room2:4mAz1ngH4X0R" | chpasswd
-USER room1
 COPY --chown=room1:user ./Documents/Room1Docs /home/room1/Documents
-USER root
 RUN chmod 700 home/room1
 RUN chmod 700 home/room2
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
-WORKDIR /home/room1
-
+WORKDIR /home/room1/Documents
+RUN cd ..
+USER room1
