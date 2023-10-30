@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Aspira XNar Light', sans-serif;
     background-color: #181818;
     color: #fff;
 }
@@ -46,4 +46,28 @@ input[type="reset"] {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+input[type="reset"]:hover {
+    width: 100%;
+    background-color: #00457e;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background-color: #0060ad;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00457e;
 }

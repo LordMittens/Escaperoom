@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>User Page</title>
+    <title>Escaperoom</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="container">
-        <h2>Login as user</h2>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="reset" value="Login" onclick="validateForm()">
-        </form>
+        <header>
+            <h1 style="font-size: 36px; text-align: center;">Welcome to the escaperoom</h1>
+        </header>
+        
+        <main>
+            <p>This is the prototype of the escaperoom. During this escaperoom you goal is to break-out of your low privalage through exploiting multiple different vulnerabilities. For now only one flag has been implemented. This flag wil contain the log-in info of an account called room2. Have fun!</p>
+        </main>
+        <button type="button" onclick="pageChange()">Start Escaperoom!</button> 
+        </body>
     </div>
-
-    <script src="validator.js"></script>
+    <script>
+        function pageChange(){
+            window.location.href = "userlogin.html"
+        };
+    </script>
 </body>
-
 </html>
