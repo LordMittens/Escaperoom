@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h2>Welcome Page</h2>
@@ -13,20 +16,12 @@
     </div>
 
     <script>
-        // Function to parse URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-            var results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-        var userID = getUrlParameter('userID');
+        var userID = new URLSearchParams(window.location.search).get('userID')
         if (userID === '1') {
             window.location.href = 'adminlogin.html';
         } else {
             var welcomeMessage = document.getElementById('welcomeMessage');
-            welcomeMessage.textContent = 'Welcome, User' + userID + '!';
+            welcomeMessage.textContent = 'Welcome, User ' + userID + '!';
         }
     </script>
 </body>

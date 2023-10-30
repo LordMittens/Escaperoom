@@ -1,33 +1,46 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #181818;
+    color: #fff;
 }
+
 .container {
     width: 300px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color:rgba(35,35,35,1);
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
     margin-top: 100px;
 }
+
 h2 {
     text-align: center;
+    --fontSize: 30; 
+    line-height: 1.5;
+    color: rgb(224, 224, 224);
 }
+
 label {
     display: block;
     margin-bottom: 8px;
+    color: #999;
 }
-input[type="text"], input[type="password"] {
+
+input[type="text"],
+input[type="password"] {
     width: 92%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
     border-radius: 3px;
 }
+
 input[type="reset"] {
     width: 100%;
-    background-color: #007BFF;
+    background-color: #0060ad;
     color: #fff;
     padding: 10px;
     border: none;
