@@ -26,6 +26,10 @@ RUN chmod 770 home/room1 && \
 	chmod 770 home/room4 && \
 	chmod 770 home/room5
 
+# Change command permissions
+RUN chown room2:room2 usr/bin/find && \
+	chmod 770 usr/bin/find
+
 # Change root pass, set user and location on start-up
 RUN echo 'root:password' | chpasswd
 CMD [ "/bin/bash" ]
