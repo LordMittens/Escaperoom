@@ -1,4 +1,2 @@
-Enter to Room 3:
-
-username: room3
-password: room3
+RW50ZXIgdG8gUm9vbSAzOg0Kfn5-fn5-fn5-fn5-fn5-fg0KdXNlcm5hbWU6IHJvb20zDQpwYXNz
+d29yZDogQjRzM2Q2ND8_DQo=

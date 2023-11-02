@@ -5,10 +5,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && \
 	apt-get install -y apt-utils nano
 
-# Make a rooms and assign groups
-RUN useradd -s /bin/bash -m room1 && echo "room1:password" | chpasswd && \
+# Make the rooms and assign groups
+RUN useradd -s /bin/bash -m room1 && echo "room1:room1" | chpasswd && \
 	useradd -s /bin/bash -G room1 -m room2 && echo "room2:4mAz1ngH4X0R" | chpasswd && \
-	useradd -s /bin/bash -G room1,room2 -m room3 && echo "room3:room3" | chpasswd && \
+	useradd -s /bin/bash -G room1,room2 -m room3 && echo "room3:B4s3d64??" | chpasswd && \
 	useradd -s /bin/bash -G room1,room2,room3 -m room4 && echo "room4:room4" | chpasswd && \
 	useradd -s /bin/bash -G room1,room2,room3,room4 -m room5 && echo "room5:room5" | chpasswd
 
