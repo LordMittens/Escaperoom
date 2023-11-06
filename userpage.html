@@ -9,13 +9,14 @@
 
 <body>
     <div class="container">
-        <h2>Welcome Page</h2>
-        <div id="welcomeMessage"></div>
+        <h2 id="welcomeMessage"></h2>
+        <div>Congratulations! You've cleared the first room and entered the second room!<br><br>
+            Try and get further from here.</div>
     </div>
 
     <script>
         var userID = new URLSearchParams(window.location.search).get('userID')
-        if (userID === '1') {
+        if (userID === '0') {
             window.location.href = 'adminlogin.html';
         } else {
             var welcomeMessage = document.getElementById('welcomeMessage');
