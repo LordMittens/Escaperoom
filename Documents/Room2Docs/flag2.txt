@@ -1,4 +1,8 @@
-Enter to Room 3:
 
+Congratulations! You've found flag2.
+
+Room 3 Credentials:
+~~~~~~~~~~~~~~~~
 username: room3
 password: 4mAz1ngH4X0R
+

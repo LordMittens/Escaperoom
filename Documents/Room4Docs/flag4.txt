@@ -1,4 +1,8 @@
-Enter to Room 5:
 
+Congratulations! You've found flag4.
+
+Room 5 Credentials:
+~~~~~~~~~~~~~~~~
 username: room5
-password: room5
+password: 0nly1m0r3R00M<<
+
