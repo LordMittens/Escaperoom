@@ -18,22 +18,27 @@ COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
-# Changing directory permissions to prevent low rooms from accessing higher rooms 
-RUN chmod 770 home/room2 && \
-	chmod 770 home/room3 && \
-	chmod 770 home/room4 && \
-	chmod 770 home/room5
+# Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
+COPY ./Documents/Room5Docs/startup.sh ./etc/init.d
+RUN chmod +x /etc/init.d/startup.sh && \
+	update-rc.d startup.sh defaults && \
+	echo "/etc/init.d/startup.sh" >> ./root/.bashrc
+	
 
-# Change permissions
-RUN chown admin:admin ./home/room4/Documents/flag4.txt && \
-	chmod 770 ./home/room4/Documents/flag4.txt && \
-	chown admin:admin ./bin/less && \
-	chmod u+s /bin/less && \
-	chown room3:room3 usr/bin/find && \
-	chmod 770 usr/bin/find
+# When Docker fixes "docker cp -a" the following can be enabled again.
+
+# Changing directory permissions to prevent low rooms from accessing higher rooms. Then change file and command permissions	
+	# chmod -R 770 home/* && \
+	# chown admin:admin ./bin/less && \
+	# chmod u+s /bin/less && \
+	# chown room3:room3 usr/bin/find && \
+	# chmod 770 usr/bin/find && \
+	# chown admin:admin ./home/room5/Documents/script.sh && \
+	# chmod 774 ./home/room5/Documents/script.sh && \
+	# chmod u+s ./home/room5/Documents/script.sh
 
 # Change root pass, set user and location on start-up
 RUN echo 'root:password' | chpasswd
-CMD [ "/bin/bash" ]
-WORKDIR /home/room2
-USER room2
+CMD ["/bin/bash"]
+WORKDIR /home
+USER root
