@@ -6,25 +6,25 @@ RUN apt-get update && apt-get -y upgrade && \
 	apt-get install -y apt-utils nano less
 
 # Make the rooms and assign groups
-RUN useradd -s /bin/bash -m room1 && echo "room1:room1" | chpasswd && \
-	useradd -s /bin/bash -G room1 -m room3 && echo "room3:4mAz1ngH4X0R" | chpasswd && \
-	useradd -s /bin/bash -G room1,room3 -m room4 && echo "room4:B4s3d64??" | chpasswd && \
-	useradd -s /bin/bash -G room1,room3,room4 -m room5 && echo "room5:0nly1m0r3R00M<<" | chpasswd && \
+RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
+	useradd -s /bin/bash -G room2 -m room3 && echo "room3:4mAz1ngH4X0R" | chpasswd && \
+	useradd -s /bin/bash -G room2,room3 -m room4 && echo "room4:B4s3d64??" | chpasswd && \
+	useradd -s /bin/bash -G room2,room3,room4 -m room5 && echo "room5:0nly1m0r3R00M<<" | chpasswd && \
 	useradd -s /bin/bash -m admin && echo "admin:admin" | chpasswd
 
 # Copy local docs and put them in the escaperoom
-COPY --chown=room1:room1 ./Documents/Room2Docs /home/room1/Documents/
+COPY --chown=room2:room2 ./Documents/Room2Docs /home/room2/Documents/
 COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
 COPY ./Documents/startup.sh ./root
-COPY ./Documents/room2startup.sh ./home/room1
+COPY ./Documents/room2startup.sh ./home/room2
 RUN chmod +x /root/startup.sh && \
-	chmod +x /home/room1/room2startup.sh && \
-	echo "/root/startup.sh" >> ./root/.bashrc
-	#echo "/home/room2/room2startup.sh" >> /home/room1/.bashrc
+	chmod +x /home/room2/room2startup.sh && \
+	echo "/root/startup.sh" >> ./root/.bashrc && \
+	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
 	
 
 # When Docker fixes "docker cp -a" the following can be enabled again.
@@ -43,4 +43,4 @@ RUN chmod +x /root/startup.sh && \
 RUN echo 'root:password' | chpasswd
 CMD ["/bin/bash"]
 WORKDIR /home
-USER root
+USER admin
