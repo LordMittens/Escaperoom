@@ -1,2 +1,2 @@
 #!/bin/bash
-su root
+echo 'password' | su root
