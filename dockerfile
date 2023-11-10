@@ -43,4 +43,4 @@ RUN chmod +x /root/startup.sh && \
 RUN echo 'root:password' | chpasswd
 CMD ["/bin/bash"]
 WORKDIR /home
-USER admin
+USER room2
