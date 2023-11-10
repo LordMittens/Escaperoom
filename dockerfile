@@ -19,7 +19,7 @@ COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
-COPY ./Documents/Room5Docs/startup.sh ./etc/init.d
+COPY ./Documents/startup.sh ./etc/init.d
 RUN chmod +x /etc/init.d/startup.sh && \
 	update-rc.d startup.sh defaults && \
 	echo "/etc/init.d/startup.sh" >> ./root/.bashrc
@@ -36,6 +36,9 @@ RUN chmod +x /etc/init.d/startup.sh && \
 	# chown admin:admin ./home/room5/Documents/script.sh && \
 	# chmod 774 ./home/room5/Documents/script.sh && \
 	# chmod u+s ./home/room5/Documents/script.sh
+
+# We set env, as this gets extracted by Webvm. This is optional.
+ENV HOME="/home" TERM="xterm" USER="root" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
 
 # Change root pass, set user and location on start-up
 RUN echo 'root:password' | chpasswd
