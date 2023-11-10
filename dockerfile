@@ -23,8 +23,8 @@ COPY ./Documents/startup.sh ./root
 COPY ./Documents/room2startup.sh ./home/room1
 RUN chmod +x /root/startup.sh && \
 	chmod +x /home/room1/room2startup.sh && \
-	echo "/root/startup.sh" >> ./root/.bashrc && \
-	echo "/home/room2/room2startup.sh" >> /home/room1/.bashrc
+	echo "/root/startup.sh" >> ./root/.bashrc
+	#echo "/home/room2/room2startup.sh" >> /home/room1/.bashrc
 	
 
 # When Docker fixes "docker cp -a" the following can be enabled again.
