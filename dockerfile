@@ -43,3 +43,5 @@ RUN chmod +x /root/startup.sh && \
 ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
 CMD ["/bin/bash"]
+WORKDIR /home
+USER room2
