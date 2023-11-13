@@ -6,3 +6,4 @@ Room 3 Credentials:
 username: room3
 password: 4mAz1ngH4X0R
 
+gpgtar --decrypt --directory ../../../../../home/decrypted_room3 --gpg-args "--passphrase=4mAz1ngH4X0R --batch" ../../../../../home/room3.gpg

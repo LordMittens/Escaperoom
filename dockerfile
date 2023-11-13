@@ -18,16 +18,20 @@ COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
-RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=room3pass --batch" ./home/room3 && \
-	rm -r ./home/room3/Documents
+RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
+	rm -r ./home/room3/Documents && \
+	gpgtar --encrypt --symmetric --output ./home/room4.gpg --gpg-args="--passphrase=B4s3d64?? --batch" ./home/room4 && \
+	rm -r ./home/room4/Documents && \
+	gpgtar --encrypt --symmetric --output ./home/room5.gpg --gpg-args="--passphrase=0nly1m0r3R00M<< --batch" ./home/room5 && \
+	rm -r ./home/room5/Documents
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
-COPY ./Documents/startup.sh ./root
-COPY ./Documents/room2startup.sh ./home/room2
-RUN chmod +x /root/startup.sh && \
-	chmod +x /home/room2/room2startup.sh && \
-	echo "/root/startup.sh" >> ./root/.bashrc && \
-	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
+# COPY ./Documents/startup.sh ./root
+# COPY ./Documents/room2startup.sh ./home/room2
+# RUN chmod +x /root/startup.sh && \
+# 	chmod +x /home/room2/room2startup.sh && \
+# 	echo "/root/startup.sh" >> ./root/.bashrc && \
+# 	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
 	
 
 # When Docker fixes "docker cp -a" the following can be enabled again.
@@ -43,7 +47,7 @@ RUN chmod +x /root/startup.sh && \
 	# chmod u+s ./home/room5/Documents/script.sh
 
 # Change root pass, set user and location on start-up
-#ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
+ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
 CMD ["/bin/bash"]
 WORKDIR /home
