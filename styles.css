@@ -40,7 +40,7 @@ input[type="password"] {
 
 input[type="reset"] {
     width: 100%;
-    background-color: #0060ad;
+    background-color: #C23350;
     color: #fff;
     padding: 10px;
     border: none;
@@ -50,7 +50,7 @@ input[type="reset"] {
 
 input[type="reset"]:hover {
     width: 100%;
-    background-color: #00457e;
+    background-color: #7a2032;
     color: #fff;
     padding: 10px;
     border: none;
@@ -60,7 +60,7 @@ input[type="reset"]:hover {
 
 button {
     width: 100%;
-    background-color: #0060ad;
+    background-color: #C23350;
     color: #fff;
     padding: 10px;
     border: none;
@@ -69,5 +69,5 @@ button {
 }
 
 button:hover {
-    background-color: #00457e;
+    background-color: #7a2032;
 }

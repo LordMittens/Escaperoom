@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Welcome Page</title>
+    <title>Welkom Pagina</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
         <h2 id="welcomeMessage"></h2>
-        <div>Congratulations! You've cleared the first room and entered the second room!<br><br>
-            Try and get further from here.</div>
+        <div>Gefeliciteerd! Je hebt de eerste kamer afgerond en bent de tweede kamer ingekomen!<br><br>
+            Probeer vanaf hier verder te komen.</div>
     </div>
 
     <script>
@@ -20,7 +20,7 @@
             window.location.href = 'adminlogin.html';
         } else {
             var welcomeMessage = document.getElementById('welcomeMessage');
-            welcomeMessage.textContent = 'Welcome, User ' + userID + '!';
+            welcomeMessage.textContent = 'Welkom, User ' + userID + '!';
         }
     </script>
 </body>
