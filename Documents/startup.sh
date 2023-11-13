@@ -11,6 +11,12 @@ chown room4:room4 ../../../home/room4/*
 chown room5:room5 ../../../home/room5/
 chown room5:room5 ../../../home/room5/*
 
+chmod g+rwxs ../../../root
+chmod g+rwxs ../../../home/room2/
+chmod g+rwxs ../../../home/room3/
+chmod g+rwxs ../../../home/room4/
+chmod g+rwxs ../../../home/room5/
+
 # Room 3 setup
 chown room3:room3 ../../../usr/bin/find
 chmod 770 ../../../usr/bin/find
