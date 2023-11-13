@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update and install packages
 RUN apt-get update && apt-get -y upgrade && \
-	apt-get install -y apt-utils nano less
+	apt-get install -y apt-utils nano less gnupg-utils procps acl
 
 # Make the rooms and assign groups
 RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
@@ -17,6 +17,9 @@ COPY --chown=room2:room2 ./Documents/Room2Docs /home/room2/Documents/
 COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
+
+RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=room3pass --batch" ./home/room3 && \
+	rm -r ./home/room3/Documents
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
 COPY ./Documents/startup.sh ./root
@@ -40,7 +43,7 @@ RUN chmod +x /root/startup.sh && \
 	# chmod u+s ./home/room5/Documents/script.sh
 
 # Change root pass, set user and location on start-up
-ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
+#ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
 RUN echo 'root:password' | chpasswd
 CMD ["/bin/bash"]
 WORKDIR /home
