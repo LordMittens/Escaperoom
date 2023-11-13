@@ -27,5 +27,7 @@ chmod u+s ../../../home/room5/Documents/script.sh
 
 # Remove evidence
 rm ../../../home/room2/room2startup.sh
+rm ../../../root/startup.sh
 sed -i '$d' ../../../home/room2/.bashrc
+sed -i '$d' ../../../root/.bashrc
 su room2
