@@ -18,12 +18,13 @@ COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
+# Encrypts room directories since normal linux permissions do not work
 RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
-	rm -r ./home/room3/Documents && \
+	rm -r ./home/room3 && \
 	gpgtar --encrypt --symmetric --output ./home/room4.gpg --gpg-args="--passphrase=B4s3d64?? --batch" ./home/room4 && \
-	rm -r ./home/room4/Documents && \
+	rm -r ./home/room4 && \
 	gpgtar --encrypt --symmetric --output ./home/room5.gpg --gpg-args="--passphrase=0nly1m0r3R00M<< --batch" ./home/room5 && \
-	rm -r ./home/room5/Documents
+	rm -r ./home/room5
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
 # COPY ./Documents/startup.sh ./root
