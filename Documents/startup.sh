@@ -15,6 +15,13 @@ chown room4:room4 ../../../home/room4/*
 chown room5:room5 ../../../home/room5/
 chown room5:room5 ../../../home/room5/*
 
+zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3
+zip --password B4s3d64?? -r ./home/room4.zip ./home/room4
+zip --password 0nly1m0r3R00M<< -r ./home/room5.zip ./home/room5
+rm -r ./home/room3/Documents
+rm -r ./home/room4/Documents
+rm -r ./home/room5/Documents
+
 # Room 3 setup
 chown room3:room3 ../../../usr/bin/find
 chmod 770 ../../../usr/bin/find
