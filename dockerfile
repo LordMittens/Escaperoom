@@ -27,12 +27,12 @@ RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphr
 	rm -r ./home/room5
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
-# COPY ./Documents/startup.sh ./root
-# COPY ./Documents/room2startup.sh ./home/room2
-# RUN chmod +x /root/startup.sh && \
-# 	chmod +x /home/room2/room2startup.sh && \
-# 	echo "/root/startup.sh" >> ./root/.bashrc && \
-# 	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
+COPY ./Documents/startup.sh ./root
+COPY ./Documents/room2startup.sh ./home/room2
+RUN chmod +x /root/startup.sh && \
+ 	chmod +x /home/room2/room2startup.sh && \
+ 	echo "/root/startup.sh" >> ./root/.bashrc && \
+ 	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
 	
 
 # When Docker fixes "docker cp -a" the following can be enabled again.
