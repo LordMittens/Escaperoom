@@ -2,17 +2,18 @@
 
 # General escaperoom setup
 chmod -R 770 ../../../home/*
-chown room2:room2 ../../../home/room3.gpg
-chown room2:room2 ../../../home/room4.gpg
-chown room2:room2 ../../../home/room5.gpg
-#chown room2:room2 ../../../home/room2/
-#chown room2:room2 ../../../home/room2/*
-#chown room3:room3 ../../../home/room3/
-#chown room3:room3 ../../../home/room3/*
-#chown room4:room4 ../../../home/room4/
-#chown room4:room4 ../../../home/room4/*
-#chown room5:room5 ../../../home/room5/
-#chown room5:room5 ../../../home/room5/*
+chown room2:room2 ../../../home/room2/
+chown room2:room2 ../../../home/room2/*
+chown room3:room3 ../../../home/room3.gpg
+chown room4:room4 ../../../home/room4.gpg
+chown room5:room5 ../../../home/room5.gpg
+
+chown room3:room3 ../../../home/room3/
+chown room3:room3 ../../../home/room3/*
+chown room4:room4 ../../../home/room4/
+chown room4:room4 ../../../home/room4/*
+chown room5:room5 ../../../home/room5/
+chown room5:room5 ../../../home/room5/*
 
 # Room 3 setup
 chown room3:room3 ../../../usr/bin/find
