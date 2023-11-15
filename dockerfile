@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update and install packages
 RUN apt-get update && apt-get -y upgrade && \
-	apt-get install -y apt-utils nano less gnupg-utils procps acl
+	apt-get install -y apt-utils nano less gnupg-utils procps acl rng-tools
 
 # Make the rooms and assign groups
 RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
@@ -19,7 +19,10 @@ COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
 # Encrypts room directories since normal linux permissions do not work
-RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
+#RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --cipher-algo AES128 --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
+RUN	gpg --gen-random 2 10 > random-key-file && \
+	gpg --symmetric --output ./home/room3.gpg --cipher-algo AES128 --passphrase "4mAz1ngH4X0R" --batch --yes --no-tty ./home/room3 < random-key-file && \
+	rm random-key-file && \
 	rm -r ./home/room3/Documents && \
 	gpgtar --encrypt --symmetric --output ./home/room4.gpg --gpg-args="--passphrase=B4s3d64?? --batch" ./home/room4 && \
 	rm -r ./home/room4/Documents && \
