@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update and install packages
 RUN apt-get update && apt-get -y upgrade && \
-	apt-get install -y apt-utils nano less gnupg-utils procps acl rng-tools zip
+	apt-get install -y apt-utils nano less gnupg-utils procps acl rng-tools zip man
 
 # Make the rooms and assign groups
 RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
