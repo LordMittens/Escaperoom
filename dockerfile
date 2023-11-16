@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update and install packages
 RUN apt-get update && apt-get -y upgrade && \
-	apt-get install -y apt-utils nano less gnupg-utils procps acl rng-tools zip man
+	apt-get install -y apt-utils nano less gnupg-utils procps acl rng-tools zip man sudo
 
 # Make the rooms and assign groups
 RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
@@ -18,20 +18,20 @@ COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
 COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
 
-RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
-	zip --password B4s3d64?? -r ./home/room4.zip ./home/room4 && \
-	zip --password 0nly1m0r3R00M<< -r ./home/room5.zip ./home/room5 && \
-	rm -r ./home/room3/Documents && \
-	rm -r ./home/room4/Documents && \
-	rm -r ./home/room5/Documents
+# RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
+# 	zip --password B4s3d64?? -r ./home/room4.zip ./home/room4 && \
+# 	zip --password 0nly1m0r3R00M<< -r ./home/room5.zip ./home/room5 && \
+# 	rm -r ./home/room3/Documents && \
+# 	rm -r ./home/room4/Documents && \
+# 	rm -r ./home/room5/Documents
 
 # Encrypts room directories since normal linux permissions do not work
-# RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
-# 	rm -r ./home/room3/Documents && \
-# 	gpgtar --encrypt --symmetric --output ./home/room4.gpg --gpg-args="--passphrase=B4s3d64?? --batch" ./home/room4 && \
-# 	rm -r ./home/room4/Documents && \
-# 	gpgtar --encrypt --symmetric --output ./home/room5.gpg --gpg-args="--passphrase=0nly1m0r3R00M<< --batch" ./home/room5 && \
-# 	rm -r ./home/room5/Documents
+ RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3 && \
+ 	rm -r ./home/room3/Documents && \
+ 	gpgtar --encrypt --symmetric --output ./home/room4.gpg --gpg-args="--passphrase=B4s3d64?? --batch" ./home/room4 && \
+ 	rm -r ./home/room4/Documents && \
+ 	gpgtar --encrypt --symmetric --output ./home/room5.gpg --gpg-args="--passphrase=0nly1m0r3R00M<< --batch" ./home/room5 && \
+ 	rm -r ./home/room5/Documents
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
 COPY ./Documents/startup.sh ./root
