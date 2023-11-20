@@ -12,14 +12,14 @@ chown room3:room3 ../../../usr/bin/find
 chmod 770 ../../../usr/bin/find
 
 # Room 4 setup
-chown admin:admin ../../../home/room4/Documents/flag4.txt
+chown admin:admin ../../../home/room4/flag4.txt
 chown admin:admin ../../../bin/less
 chmod u+s ../../../bin/less
 
 # Room 5 setup
-chown admin:admin ../../../home/room5/Documents/script.sh
-chmod 774 ../../../home/room5/Documents/script.sh
-chmod u+s ../../../home/room5/Documents/script.sh
+chown admin:admin ../../../home/room5/script.sh
+chmod 774 ../../../home/room5/script.sh
+chmod u+s ../../../home/room5/script.sh
 
 # Remove evidence
 rm ../../../home/room2/room2startup.sh

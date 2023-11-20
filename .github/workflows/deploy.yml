@@ -161,7 +161,7 @@ jobs:
       - name: Export and unpack container filesystem contents into mounted ext2 image.
         run: | 
           sudo docker cp -a ${CONTAINER_ID}:/ /mnt/
-          sudo umount /mnt/
+        #sudo umount /mnt/
       # Result is an ext2 image for webvm.
 
       # Move required files for gh-pages deployment to the deployment directory $DEPLOY_DIR.

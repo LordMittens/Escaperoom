@@ -13,10 +13,10 @@ RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
 	useradd -s /bin/bash -m admin && echo "admin:admin" | chpasswd
 
 # Copy local docs and put them in the escaperoom
-COPY --chown=room2:room2 ./Documents/Room2Docs /home/room2/Documents/
-COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/Documents/
-COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/Documents/
-COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/Documents/
+COPY --chown=room2:room2 ./Documents/Room2Docs /home/room2/
+COPY --chown=room3:room3 ./Documents/Room3Docs /home/room3/
+COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/
+COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/
 
 # RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
 # 	zip --password B4s3d64?? -r ./home/room4.zip ./home/room4 && \
