@@ -14,8 +14,7 @@ chmod 770 ../../../usr/bin/find
 # Room 4 setup
 chown admin:admin ../../../home/room4/flag4.txt
 chown admin:admin ../../../usr/bin/sus
-chmod u+s ../../../usr/bin/sus
-chmod o+x ../../../usr/bin/sus
+chmod 4755 ../../../usr/bin/sus
 
 # Room 5 setup
 chown admin:admin ../../../home/room5/script.sh
