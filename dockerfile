@@ -19,12 +19,12 @@ COPY --chown=room4:room4 ./Documents/Room4Docs /home/room4/
 COPY --chown=room5:room5 ./Documents/Room5Docs /home/room5/
 
 # Zips room directories with passwords since normal linux permissions do not work
-RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
-	zip --password B4s3d64?? -r ./home/room4.zip ./home/room4 && \
-	zip --password 0nly1m0r3R00M<< -r ./home/room5.zip ./home/room5 && \
-	rm -r ./home/room3 && \
-	rm -r ./home/room4 && \
-	rm -r ./home/room5
+# RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
+# 	zip --password B4s3d64?? -r ./home/room4.zip ./home/room4 && \
+# 	zip --password 0nly1m0r3R00M<< -r ./home/room5.zip ./home/room5 && \
+# 	rm -r ./home/room3 && \
+# 	rm -r ./home/room4 && \
+# 	rm -r ./home/room5
 
 # Encrypts room directories with passwords since normal linux permissions do not work
 # RUN gpgtar --encrypt --symmetric --output ./home/room3.gpg --gpg-args="--passphrase=4mAz1ngH4X0R --batch" ./home/room3/Documents/flag3.txt && \
@@ -36,6 +36,7 @@ RUN zip --password 4mAz1ngH4X0R -r ./home/room3.zip ./home/room3 && \
 
 # Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
 COPY ./Documents/sus ./usr/bin
+COPY ./Documents/galf ./usr/bin
 COPY ./Documents/startup.sh ./root
 COPY ./Documents/room2startup.sh ./home/room2
 RUN chmod +x /root/startup.sh && \

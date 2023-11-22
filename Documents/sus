@@ -1,2 +1,21 @@
 #!/bin/bash
-echo "You've found the flag!"
+ans=$(echo -n "$1" | base64)
+echo "$ans"
+case $ans in
+
+flag1.txt)
+echo "not sus"
+;;
+flag2.txt)
+echo "not sus"
+;;
+flag3.txt)
+echo "not sus"
+;;
+ZmxhZzQudHh0)
+echo "flag found! $ans"
+;;
+*)
+echo "not flag"
+;;
+esac

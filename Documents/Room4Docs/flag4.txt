@@ -1,9 +1,2 @@
-
-Congratulations! You've found flag4.
-
-Room 5 Credentials:
-~~~~~~~~~~~~~~~~
-username: room5
-password: 0nly1m0r3R00M<<
-
-gpgtar --decrypt --directory ../../../../../home/decrypted_room5 --gpg-args "--passphrase=0nly1m0r3R00M<< --batch" ../../../../../home/room5.gpg
+No flag here. Eventhough the file is called flag.
+Find it elsewhere!

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Congratulations! You've found flag4."
+echo ""
+echo "Room 5 Credentials:"
+echo "~~~~~~~~~~~~~~~~"
+echo "username: room5"
+echo "password: 0nly1m0r3R00M<<"
