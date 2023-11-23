@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ans=$(echo -n "$1" | base64)
 echo "$ans"
 case $ans in
