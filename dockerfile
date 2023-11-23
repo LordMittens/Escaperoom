@@ -9,7 +9,7 @@ RUN apt-get update && apt-get -y upgrade && \
 RUN useradd -s /bin/bash -m room2 && echo "room2:room2" | chpasswd && \
 	useradd -s /bin/bash -G room2 -m room3 && echo "room3:4mAz1ngH4X0R" | chpasswd && \
 	useradd -s /bin/bash -G room2,room3 -m room4 && echo "room4:B4s3d64??" | chpasswd && \
-	useradd -s /bin/bash -G room2,room3,room4 -m room5 && echo "room5:0nly1m0r3R00M<<" | chpasswd && \
+	useradd -s /bin/bash -G room2,room3,room4,sudo -m room5 && echo "room5:0nly1m0r3R00M<<" | chpasswd && \
 	useradd -s /bin/bash -m admin && echo "admin:admin" | chpasswd
 
 # Copy local docs and put them in the escaperoom

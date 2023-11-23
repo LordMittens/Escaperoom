@@ -1,2 +1,2 @@
-#!/bin/bash  
-./../../../usr/bin/galf
+#!/bin/bash
+../../../usr/bin/sus
