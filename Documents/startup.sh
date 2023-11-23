@@ -13,7 +13,7 @@ chmod 4751 ../../../usr/bin/galf
 
 # Room 5 setup
 chmod 770 ../../../home/room5/script.sh
-chmod 754 ../../../bin/nano
+chmod 754 ../../../usr/bin/unzip
 chmod 755 ../../../usr/bin/sus
 zip ../../../home/room5/flag5.zip ../../../home/room5/flag5.txt
 rm ../../../home/room5/flag5.txt
