@@ -17,7 +17,6 @@ chown admin:admin ../../../home/room4/flag4.txt
 chmod 4751 ../../../usr/bin/galf
 
 # Room 5 setup
-chown admin:admin ../../../home/room5/script.sh
 chmod 4770 ../../../home/room5/script.sh
 chmod 755 ../../../usr/bin/sus
 

@@ -43,6 +43,7 @@ RUN chmod +x /root/startup.sh && \
  	chmod +x /home/room2/room2startup.sh && \
  	echo "/root/startup.sh" >> ./root/.bashrc && \
  	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc
+#	echo "room5 ALL=(ALL:ALL) NOPASSWD: /home/room5/script.sh" >> /home/room2/.bashrc
 	
 
 # When Docker fixes "docker cp -a" the following can be enabled again.
