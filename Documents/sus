@@ -2,21 +2,36 @@
 
 ans=$(echo -n "$1" | base64)
 echo "$ans"
-case $ans in
+case $1 in
 
-flag1.txt)
-echo "not sus"
+room2)
+echo "Room2 wachtwoord is room2"
 ;;
-flag2.txt)
-echo "not sus"
+room3)
+echo "Room3 wachtwoord is room3"
 ;;
-flag3.txt)
-echo "not sus"
+room4)
+echo "Room4 wachtwoord is room4"
 ;;
-ZmxhZzQudHh0)
-echo "flag found! $ans"
+room5)
+echo "Room5 wachtwoord is room5"
+;;
+flag1)
+echo "flag1 bestaat niet"
+;;
+flag2)
+echo "flag2 kan je vinden in: /home/room2/flag2.txt"
+;;
+flag3)
+echo "flag3 kan je vinden in: /home/room2/flag3.txt"
+;;
+flag4)
+echo "flag4 kan je vinden door te zoeken naar set SUID bits"
+;;
+flag5)
+echo "flag5 kan je in een zip vinden met het wachtwoord: $ans"
 ;;
 *)
-echo "not flag"
+echo "error: invalid input"
 ;;
 esac
