@@ -17,7 +17,7 @@ COPY ./Documents/Room3Docs /home/room3/
 COPY ./Documents/Room4Docs /home/room4/
 COPY ./Documents/Room5Docs /home/room5/
 
-# Adding file to be executed on start up. This file changes various ownerships to prevent low rooms from accessing higher rooms.
+# Adding file to be executed on start up, and general escaperoom setup
 COPY ./Documents/sus ./usr/bin
 COPY ./Documents/galf ./usr/bin
 COPY ./Documents/startup.sh ./root
@@ -26,7 +26,9 @@ RUN chmod +x /root/startup.sh && \
  	chmod +x /home/room2/room2startup.sh && \
  	echo "/root/startup.sh" >> ./root/.bashrc && \
  	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc && \
-	echo "room5 ALL=(ALL:ALL) NOPASSWD: /home/room5/script.sh" >> /etc/sudoers
+	echo "room5 ALL=(ALL:ALL) NOPASSWD: /home/room5/script.sh" >> /etc/sudoers && \
+	zip -q -j -P ZmxhZzU= ../../../home/room5/flag5.zip ../../../home/room5/flag5.txt && \
+	rm ../../../home/room5/flag5.txt
 
 # Change root pass, set user and location on start-up
 ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"

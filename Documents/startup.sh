@@ -12,11 +12,11 @@ chmod 750 ../../../usr/bin/find
 chmod 4751 ../../../usr/bin/galf
 
 # Room 5 setup
-chmod 770 ../../../home/room5/script.sh
+chown root:root ../../../home/room5/script.sh
+chmod 776 ../../../home/room5/script.sh
 chmod 754 ../../../usr/bin/unzip
+chmod 754 ../../../usr/bin/funzip
 chmod 755 ../../../usr/bin/sus
-zip -q -j -P ZmxhZzUK ../../../home/room5/flag5.zip ../../../home/room5/flag5.txt
-rm ../../../home/room5/flag5.txt
 
 # Remove evidence
 rm ../../../home/room2/room2startup.sh

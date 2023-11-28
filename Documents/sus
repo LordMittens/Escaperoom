@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ans=$(echo -n "$1" | base64)
-echo "$ans"
 case $1 in
 
 room2)
