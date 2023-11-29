@@ -17,7 +17,7 @@ COPY ./Documents/Room3Docs /home/room3/
 COPY ./Documents/Room4Docs /home/room4/
 COPY ./Documents/Room5Docs /home/room5/
 
-# Adding file to be executed on start up, and general escaperoom setup
+# Add start-up files for permissions, and add challenge setup
 COPY ./Documents/sus ./usr/bin
 COPY ./Documents/galf ./usr/bin
 COPY ./Documents/startup.sh ./root
@@ -32,7 +32,7 @@ RUN chmod +x /root/startup.sh && \
 
 # Change root pass, set user and location on start-up
 ENV HOME="/home/room2" TERM="xterm" USER="room2" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
-RUN echo 'root:password' | chpasswd
+RUN echo 'root:C34AudC3WzWGeN' | chpasswd
 CMD ["/bin/bash"]
 WORKDIR /home/room2
 USER room2
