@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "password" | su -l root
+echo "C34AudC3WzWGeN" | su -l root
