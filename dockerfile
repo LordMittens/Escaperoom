@@ -21,6 +21,7 @@ COPY ./Documents/Room5Docs /home/room5/
 COPY ./Documents/sus ./usr/bin
 COPY ./Documents/galf ./usr/bin
 COPY ./Documents/startup.sh ./root
+COPY ./Documents/.bash_history ./home/room4
 COPY ./Documents/room2startup.sh ./home/room2
 RUN chmod +x /root/startup.sh && \
  	chmod +x /home/room2/room2startup.sh && \

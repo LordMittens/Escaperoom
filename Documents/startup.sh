@@ -7,6 +7,7 @@ chown -R room4:room4 ../../../home/room4/
 chown -R room5:room5 ../../../home/room5/
 
 # Room 4 setup
+chmod -x ../../../home/room4/.bash_history
 chown room4:room4 ../../../usr/bin/find
 chmod 750 ../../../usr/bin/find
 chmod 4751 ../../../usr/bin/galf
