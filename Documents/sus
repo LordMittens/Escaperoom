@@ -1,6 +1,5 @@
 #!/bin/bash
 
-ans=$(echo -n "$1" | base64)
 case $1 in
 
 room2)
@@ -25,10 +24,10 @@ flag3)
 echo "flag3 kan je vinden in: /home/room2/flag3.txt"
 ;;
 flag4)
-echo "flag4 kan je vinden door te zoeken naar set SUID bits"
+echo "flag4 kan je vinden door te zoeken naar set SUID bits of history"
 ;;
-flag5)
-echo "flag5 kan je in een zip vinden met het wachtwoord: $ans"
+flag5 | flag5.zip | flag5.txt)
+echo "flag5 kan je in een zip vinden met het wachtwoord: ZmxhZzU="
 ;;
 *)
 echo "error: invalid input"

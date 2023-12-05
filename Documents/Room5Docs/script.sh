@@ -1,2 +1,2 @@
 #!/bin/bash
-../../../usr/bin/sus
+../../../usr/bin/sus $1
