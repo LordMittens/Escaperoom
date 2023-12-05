@@ -28,7 +28,7 @@ RUN chmod +x /root/startup.sh && \
  	echo "/root/startup.sh" >> ./root/.bashrc && \
  	echo "/home/room2/room2startup.sh" >> /home/room2/.bashrc && \
 	echo "HISTFILE=/root/.bash_history" >> /home/room4/.bashrc && \
-	echo "room5 ALL=(ALL:ALL) NOPASSWD: /home/room5/script.sh" >> /etc/sudoers && \
+	echo "room5 ALL=(ALL:ALL) NOPASSWD: /home/room5/give_pass_of_.sh" >> /etc/sudoers && \
 	zip -q -j -P ZmxhZzU= ../../../home/room5/flag5.zip ../../../home/room5/flag5.txt && \
 	rm ../../../home/room5/flag5.txt
 

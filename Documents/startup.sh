@@ -13,8 +13,8 @@ chmod 750 ../../../usr/bin/find
 chmod 4751 ../../../usr/bin/galf
 
 # Room 5 setup
-chown root:root ../../../home/room5/script.sh
-chmod 776 ../../../home/room5/script.sh
+chown root:root ../../../home/room5/give_pass_of_.sh
+chmod 776 ../../../home/room5/give_pass_of_.sh
 chmod 754 ../../../usr/bin/unzip
 chmod 754 ../../../usr/bin/funzip
 chmod 755 ../../../usr/bin/sus

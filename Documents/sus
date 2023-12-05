@@ -30,6 +30,6 @@ flag5 | flag5.zip | flag5.txt)
 echo "flag5 kan je in een zip vinden met het wachtwoord: ZmxhZzU="
 ;;
 *)
-echo "error: invalid input"
+echo "error: Include a variable"
 ;;
 esac
