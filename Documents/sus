@@ -3,16 +3,16 @@
 case $1 in
 
 room2)
-echo "Room2 wachtwoord is room2"
+echo "Het wachtwoord van room2 is room2"
 ;;
 room3)
-echo "Room3 wachtwoord is room3"
+echo "Het wachtwoord van room3 is room3"
 ;;
 room4)
-echo "Room4 wachtwoord is room4"
+echo "Het wachtwoord van room4 is room4"
 ;;
 room5)
-echo "Room5 wachtwoord is room5"
+echo "Het wachtwoord van room5 is room5"
 ;;
 flag1)
 echo "flag1 bestaat niet"
@@ -21,15 +21,15 @@ flag2)
 echo "flag2 kan je vinden in: /home/room2/flag2.txt"
 ;;
 flag3)
-echo "flag3 kan je vinden in: /home/room2/flag3.txt"
+echo "flag3 staat encoded in: /home/room3/flag3.txt"
 ;;
 flag4)
-echo "flag4 kan je vinden door te zoeken naar set SUID bits of history"
+echo "In de .bashrc van room4 staat een hint"
 ;;
 flag5 | flag5.zip | flag5.txt)
 echo "flag5 kan je in een zip vinden met het wachtwoord: ZmxhZzU="
 ;;
 *)
-echo "error: Include a variable"
+echo "error: Include a valid variable"
 ;;
 esac
