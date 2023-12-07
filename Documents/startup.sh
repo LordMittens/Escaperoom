@@ -8,9 +8,6 @@ chown -R room5:room5 ../../../home/room5/
 
 # Room 4 setup
 chmod -x ../../../root/.bash_history
-chown room4:room4 ../../../usr/bin/find
-chmod 750 ../../../usr/bin/find
-chmod 4751 ../../../usr/bin/galf
 
 # Room 5 setup
 chown root:root ../../../home/room5/give_pass_of_.sh
