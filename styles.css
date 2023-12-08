@@ -71,3 +71,20 @@ button {
 button:hover {
     background-color: #7a2032;
 }
+
+button:disabled {
+    background-color: #808080;
+    color: #d3d3d3;
+}
+
+a {
+    color: #4ecdc4;
+}
+
+a:visited {
+    color: #4ecdc4; 
+}
+
+a:hover {
+    text-decoration: underline;
+}
