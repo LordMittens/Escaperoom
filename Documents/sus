@@ -28,7 +28,7 @@ echo "In de .bashrc van room4 staat een hint"
 ;;
 flag5 | flag5.zip | flag5.txt)
 echo "flag5 kan je in een zip vinden met het wachtwoord: ZmxhZzU="
-echo "Let goed op de rechten die je hebt op give_pass_of_.sh!!"
+echo "Let goed op welke rechten je waar hebt!!"
 ;;
 *)
 echo "error: Include a valid variable"
